@@ -86,7 +86,7 @@ var prefix = require('vendor-prefix'),
                     cb(true);
                     if (domVal === givenVal) { resolve(el); }
                     else {
-                        console.warn(new Error('Zanimo transition: with '
+                        console.warn('Zanimo transition: with '
                             + attr + ' = ' + givenVal + ', DOM value=' + domVal
                         );
                     }
