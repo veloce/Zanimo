@@ -45,11 +45,11 @@ var prefix = require('vendor-prefix'),
 
     css = function (el, attr, value) {
         if(el._zanimo && el._zanimo.hasOwnProperty(attr)) {
-            Promise.reject(new Error(
+            console.warn(
                 'Zanimo transition with transform=' +
                 el._zanimo[attr].value +
                 ' stopped by transform=' + value
-            ));
+            );
         }
         return applycss(el, attr, value);
     },
@@ -86,9 +86,9 @@ var prefix = require('vendor-prefix'),
                     cb(true);
                     if (domVal === givenVal) { resolve(el); }
                     else {
-                        reject(new Error('Zanimo transition: with '
+                        console.warn(new Error('Zanimo transition: with '
                             + attr + ' = ' + givenVal + ', DOM value=' + domVal
-                        ));
+                        );
                     }
                 }, duration + 20 );
 
