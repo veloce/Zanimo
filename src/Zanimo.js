@@ -94,11 +94,11 @@ var prefix = require('vendor-prefix'),
 
                 el._zanimo = el._zanimo || { };
                 if(el._zanimo[attr]) {
-                    reject(new Error(
+                    console.warn(
                         'Zanimo transition with ' +
                             attr + '=' + el._zanimo[attr].value +
                             ' stopped by transition with ' + attr + '=' + value
-                    ));
+                    );
                 }
                 el._zanimo[attr] = {value: value};
             });
